@@ -12,7 +12,7 @@ namespace Test4_Mounika_Department
         string? connection;
         SqlConnection? con;
         string? query;
-        public void Department()
+        public void UpdateDepartment()
         {
             Console.WriteLine("Enter DeptID where to Update ");
             int DeptID = int.Parse(Console.ReadLine());
@@ -26,7 +26,7 @@ namespace Test4_Mounika_Department
             con.Open();
             query = "update Department set DeptName='" + DeptName + "' where DeptID=" + DeptID + "";
             SqlCommand cmd = new SqlCommand(query, con);
-            //cmd.Parameters.Add("@EmpName", System.Data.SqlDbType.NVarChar, 100).Value = eName;
+            
             int objDone = cmd.ExecuteNonQuery();
             cmd.Clone();
             if (objDone == 1)
@@ -47,7 +47,7 @@ namespace Test4_Mounika_Department
             cmd.Clone();
             if (objDone == 1)
             {
-                Console.WriteLine("Employee Record Deleted Successfully");
+                Console.WriteLine("Department Record Deleted Successfully");
             }
         }
     }
